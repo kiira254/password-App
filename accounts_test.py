@@ -6,7 +6,7 @@ class AccountsTest(unittest.TestCase):
     Class that performs testing of the various functions of accounts.py
     '''
     def setUp(self):
-        self.new_account = user_Accounts(
+        self.new_account = userAccounts(
             'instagram', 'cephaske254', 'test@mail.com', 'admin')
 
     def tearDown(self):

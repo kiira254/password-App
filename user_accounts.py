@@ -23,8 +23,8 @@ class userAccounts:
         '''
         self.accounts.append(self)
 
-    def random_password(length, chars=string.ascii_letters + string.digits):
-        return ''.join(random.choice(chars) for _ in range(length))
+    # def random_password(length, chars=string.ascii_letters + string.digits):
+    #     return ''.join(random.choice(chars) for _ in range(length))
 
     @classmethod
     def account_exist(cls, platform, username):
