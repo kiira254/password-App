@@ -25,7 +25,8 @@ class userAccounts:
 
     def random_password(length, chars=string.ascii_letters + string.digits):
         return ''.join(random.choice(chars) for _ in range(length))
-  @classmethod
+
+    @classmethod
     def account_exist(cls, platform, username):
         for account in cls.accounts:
             if account.username == username and account.platform == platform:
