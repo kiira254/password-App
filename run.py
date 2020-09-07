@@ -32,7 +32,7 @@ def login_account():
         else:
             print('Invalid Option')
             login_account()
-            def reg_existing_platform():
+def reg_existing_platform():
     ex_platform = input('Enter platform e.g. Facebook,Google, Instagram etc.: ')
     ex_username = input('Enter account username/email: ')
     if(userAccounts.account_exist(ex_platform, ex_username)):
