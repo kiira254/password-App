@@ -37,7 +37,7 @@ class User:
             user
         '''
 
-        for user in cls.user_list:
+        for user in cls.user_info:
             if user.password == password:
                 return user
 
@@ -50,6 +50,12 @@ class User:
             if user.username==username:
                 return True
         return False
+    @classmethod
+    def display_users(cls):
+        '''
+        shows the user list
+        '''
+        return cls.user_info
 
     @classmethod
     def get_user_info(cls,username):
@@ -68,5 +74,11 @@ class User:
         if cls.get_user_info(username).password == password:
             return True
         return False
+
+    @classmethod
+    def copy_username(cls,password):
+        user_found = User.find_by_password(password)
+        pyperclip.copy(user_found.username)
+
 
     

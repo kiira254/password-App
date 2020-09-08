@@ -24,7 +24,7 @@ def login_account():
     if(exists !=True):
         print('Check your password!')
     else:
-        acc_short_code = input('Hello, if you want to add an existing platform acccount, type EX. If you want to generate new account details, type NW').lower()
+        acc_short_code = input('Hello, if you want to:\n add an existing platform acccount, type EX. \nIf you want to generate new account details, type NW').lower()
         if(acc_short_code == 'nw'):
             reg_new_platform()
         elif acc_short_code =='ex':
@@ -48,10 +48,10 @@ def reg_existing_platform():
             f'Account {ex_username} added to platform {ex_platform}')
 def reg_new_platform():
     nw_platform = input('Enter platform e.g. Facebook,Google, Instagram etc.: ')
-    nw_username = input('Enter account username/email: ')
+    nw_username = input('Enter account username: ')
     nw_password = input('Type password or type AUTO to auto-generate password: ')
     if(nw_password == 'auto' or nw_password == 'AUTO'):
-        nw_password = userAccounts.random_password(
+        password = password(
             int(input('Enter preferred length: ')))
         print(f'Your password is {nw_password}')
     else:
@@ -71,9 +71,8 @@ def reg_new_platform():
             login_account()
     reg_new_platform()
 
-
 def main():
-    print('Hello! Welcome to credential manager\nUse CN to create an new user account, or LG to login to an existing user account')
+    print('Hello! Welcome to credential manager\nUse\n CN to create an new user account\n LG to login to an existing user account')
     short_code = input().lower()
     if short_code == 'cn':
         new_user_account()
