@@ -3,10 +3,13 @@ from user import User
 
 class UserTest(unittest.TestCase):
     def setUp(self):
-        self.new_user = User('cephas', 'too', 'cephaske254', 'admin', 'admin')
+        self.new_user = User ('cephas', 'too', 'cephaske254', 'admin')
 
     def tearDown(self):
-        User.user_info =[]
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            User.user_info =[]
 
     def test_init(self):
         '''
@@ -39,6 +42,13 @@ class UserTest(unittest.TestCase):
     def test_user_login(self):
         User.save_user_info(self.new_user)
         self.assertTrue(User.user_login('cephaske254','admin'))
+
+    def test_delete_user_info(self):
+        '''
+            test_delete_user_info to test if we can remove a contact from our contact list
+        '''
+        User.user_info.remove(self.new_user)
+        self.assertEqual(len(User.user_info),1)
 
 
 if __name__ == '__main__':

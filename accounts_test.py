@@ -6,7 +6,7 @@ class AccountsTest(unittest.TestCase):
     Class that performs testing of the various functions of accounts.py
     '''
     def setUp(self):
-        self.new_account = userAccounts('instagram', 'cephaske254', 'test@mail.com', 'admin')
+        self.new_account = userAccounts('instagram', 'cephaske254', 'admin')
 
     def tearDown(self):
         userAccounts.accounts = []
@@ -14,7 +14,6 @@ class AccountsTest(unittest.TestCase):
     def test_init(self):
         self.assertEqual(self.new_account.platform, 'instagram')
         self.assertEqual(self.new_account.username, 'cephaske254')
-        self.assertEqual(self.new_account.password, 'admin')
         self.assertEqual(self.new_account.password, 'admin')
 
     def test_add_account(self):

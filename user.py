@@ -18,6 +18,29 @@ class User:
         '''
         self.user_info.append(self)
 
+    def delete_user_info(self):
+
+        '''
+        deletes user from list
+        '''
+
+        User.user_info.remove(self)
+
+    @classmethod
+    def find_by_password(cls, password):
+        '''
+        Method that takes in a password and returns user that match the password
+
+        Args:
+            password: pass to search
+        Returns :
+            user
+        '''
+
+        for user in cls.user_list:
+            if user.password == password:
+                return user
+
     @classmethod
     def user_exists(cls,username):
         '''
