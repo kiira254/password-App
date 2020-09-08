@@ -6,7 +6,7 @@ class userAccounts:
     '''
     Class that stores user accounts and credentials
     '''
-    accounts = []
+    accounts = [] # empty list
 
     def __init__(self, platform, username, password):
         '''
